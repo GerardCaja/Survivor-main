@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    [SerializeField] private float waitTime;
+    [SerializeField] private string nextScene;
 
     void Start()
     {
@@ -13,7 +15,7 @@ public class ChangeScene : MonoBehaviour
 
     public IEnumerator NextScene()
     {
-        yield return new WaitForSeconds(3.27f);
-        SceneManager.LoadScene("intro");
+        yield return new WaitForSeconds(waitTime);
+        SceneManager.LoadScene(nextScene);
     }
 }
