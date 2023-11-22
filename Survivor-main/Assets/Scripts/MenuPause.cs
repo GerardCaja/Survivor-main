@@ -17,7 +17,7 @@ public class MenuPause : MonoBehaviour
 
     public void Pausa()
     {
-        Time.timeScale = 0f;
+
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
         options.SetActive(false);
@@ -27,15 +27,16 @@ public class MenuPause : MonoBehaviour
 
     public void Reaunudar()
     {
-        Time.timeScale = 1f;
+
         botonPausa.SetActive(true);
-        menuPausa.SetActive(false);
+        menuPausa.SetActive(true);
         options.SetActive(false);
+        
+        _animator.SetBool("MenuPause", false);
     }
 
     public void Back()
     {
-        Time.timeScale = 0f;
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
         options.SetActive(false);
@@ -43,9 +44,8 @@ public class MenuPause : MonoBehaviour
 
     public void Options()
     {
-        Time.timeScale = 0f;
         botonPausa.SetActive(false);
-        menuPausa.SetActive(false);
+        menuPausa.SetActive(true);
         options.SetActive(true);   
     }
 }
