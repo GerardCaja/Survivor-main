@@ -8,33 +8,12 @@ public class MenuPause : MonoBehaviour
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
     [SerializeField] private GameObject options;
-    [SerializeField] private GameObject menuWin;
-    [SerializeField] private GameObject menuDerrota;
+
     private Animator _animator;
 
     void Start()
     {
         _animator = GetComponentInChildren<Animator>();
-    }
-
-    public void MenuWin()
-    {
-        
-    }
-
-    public void NextLevel()
-    {
-
-    }
-
-    public void MenuDerrota()
-    {
-
-    }
-
-    public void Reintentar()
-    {
-        
     }
 
     public void Pausa()
@@ -43,6 +22,7 @@ public class MenuPause : MonoBehaviour
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
         options.SetActive(false);
+        
 
         _animator.SetBool("MenuPause", true);
     }
